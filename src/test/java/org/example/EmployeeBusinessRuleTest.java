@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 public class EmployeeBusinessRuleTest {
 
-	
+	// https://joel-costigliola.github.io/assertj/assertj-core-features-highlight.html
 	@Test
 	void FirstDesign_CanWeConstructAnObjectThatIsInvalid() {
 		var sut = new Employee("", "Cassaigne", 18);

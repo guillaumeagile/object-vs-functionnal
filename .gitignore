@@ -112,3 +112,4 @@ fabric.properties
 /.idea/jpa-buddy.xml
 /.idea/misc.xml
 /.idea/vcs.xml
+/.idea/*.iml
