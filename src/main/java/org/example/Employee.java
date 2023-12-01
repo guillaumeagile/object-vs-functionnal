@@ -62,7 +62,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("EmployeeWithVavr{");
+        final StringBuilder sb = new StringBuilder("Welcome {");
         sb.append("firstName='").append(firstName).append('\'');
         sb.append(", lastName='").append(lastName).append('\'');
         sb.append('}');
@@ -74,16 +74,16 @@ public class Employee {
                 getMiddleName().map(x -> x + " ").orElse("") + lastName;
     }
 
-    boolean foo(String s)
+    boolean validateProperName(String name)
     {
-        return s.replaceAll("[a-zA-Z ]", "").isEmpty() && !s.isEmpty();
+        return name.replaceAll("[a-zA-Z ]", "").isEmpty() && !name.isEmpty();
     }
 
     public boolean firstNameIsValid() {
-       return  foo(firstName);
+       return  validateProperName(firstName);
     }
 
     public boolean lastNameIsValid() {
-        return  foo(lastName);
+        return  validateProperName(lastName);
     }
 }

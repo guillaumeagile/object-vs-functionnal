@@ -7,15 +7,6 @@ public class EmployeeValidatorSimple {
         this.employee = employee;
     }
 
-    public boolean validate0() throws UnsupportedOperationException {
-        String invalidCharsFirstName = employee.getFirstName().replaceAll("[a-zA-Z ]", "");
-        String invalidCharsLastName = employee.getLastName().replaceAll("[a-zA-Z ]", "");
-        return (!employee.getFirstName().isEmpty()
-                && !employee.getLastName().isEmpty()
-                && invalidCharsFirstName.isEmpty()
-                && invalidCharsLastName.isEmpty());
-    }
-
     public boolean validate() throws UnsupportedOperationException {
         return employee.firstNameIsValid() && employee.lastNameIsValid();
     }
