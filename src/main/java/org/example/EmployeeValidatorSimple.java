@@ -12,6 +12,10 @@ public class EmployeeValidatorSimple {
     }
 
     public boolean validate() throws  UnsupportedOperationException {
-        return  (!employee.getFirstName().isEmpty());
+        return  (!employee.getFirstName().isEmpty() && !employee.getLastName().isEmpty()) ;
     }
+    // TODO: connaitre la liste des raisons pour lesquelles on est invalie
+    // TODO: mauvais design sur l'age: année de naissance ?
+
+
 }
