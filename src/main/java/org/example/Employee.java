@@ -73,4 +73,17 @@ public class Employee {
         return firstName + " " +
                 getMiddleName().map(x -> x + " ").orElse("") + lastName;
     }
+
+    boolean foo(String s)
+    {
+        return s.replaceAll("[a-zA-Z ]", "").isEmpty() && !s.isEmpty();
+    }
+
+    public boolean firstNameIsValid() {
+       return  foo(firstName);
+    }
+
+    public boolean lastNameIsValid() {
+        return  foo(lastName);
+    }
 }
