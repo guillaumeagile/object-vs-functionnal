@@ -18,7 +18,7 @@ public class Employee {
 
         this.plastName = new ProperName(lastName);
 
-        this.age = age;
+        this.age = age;    // TODO: mauvais design sur l'age: année de naissance ?
     }
 
 

@@ -9,3 +9,13 @@ et on a voulu le refaire par nous meme en comparant
    - loi de Demeter repsectée (tell, don't ask)
    - plus SOLID
  - une approche fonctionnelle
+
+
+# etape 1
+
+# etape 2
+
+
+# etape x : TODO: connaitre la liste des raisons pour lesquelles on est invalie
+
+pour cela nous allons retourner une collection d'objets "ErrorEmployee" ........

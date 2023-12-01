@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Enumeration;
+
 public class EmployeeValidatorSimple {
     private final Employee employee;
 
@@ -12,8 +14,7 @@ public class EmployeeValidatorSimple {
     }
 
 
-    // TODO: connaitre la liste des raisons pour lesquelles on est invalie
-    // TODO: mauvais design sur l'age: année de naissance ?
-
-
+    public Enumeration<Boolean> validate2()  {
+     return null;
+    }
 }
