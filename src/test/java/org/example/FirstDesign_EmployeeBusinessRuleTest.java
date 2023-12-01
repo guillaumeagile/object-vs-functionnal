@@ -25,6 +25,26 @@ public class FirstDesign_EmployeeBusinessRuleTest {
 	}
 
 	@Test
+	void EmployeeToString() {
+		var sut = new Employee("Anthony", "Cassaigne", 18);
+		assertThat( sut.toString()).isEqualTo("Welcome {firstName='Anthony', lastName='Cassaigne'}");
+	}
+
+	@Test
+	void EmployeeHascode() {
+		var sut = new Employee("Anthony", "Cassaigne", 18);
+		var sut2 = new Employee("Anthony", "Cassaigne", 18);
+		assertThat( sut.hashCode()).isEqualTo(sut2.hashCode());
+	}
+
+	@Test
+	void EmployeeEquality() {
+		var sut = new Employee("Anthony", "Cassaigne", 18);
+		var sut2 = new Employee("Anthony", "Cassaigne", 18);
+		assertThat( sut).isEqualTo(sut2);
+	}
+
+	@Test
 	void SecondRule_Invalid() {
 		var sut = new Employee("Anthony", "", 18);
 
@@ -47,5 +67,18 @@ public class FirstDesign_EmployeeBusinessRuleTest {
 		var validateur = new EmployeeValidatorSimple(sut);
 		assertThat( validateur.validate()).isFalse();
 	}
+
+	@Test
+	void ProperNameShouldBeValid(){
+		var sut = new ProperName("Anthony");
+
+		assertThat( sut.validate()).isTrue();
+	}
+	@Test
+	void ProperNameShouldBeInValid(){
+		var sut = new ProperName("Ant-hony");
+		assertThat( sut.validate()).isFalse();
+	}
+
 
 }
