@@ -17,6 +17,7 @@ public class ErrorEmployeeTest {
         var err = new ErrorEmployee("fool", 0);
        var collectionError =  new ArrayList<ErrorEmployee>();
         collectionError.add(err);
+      var exempleStreamable =   collectionError.stream().toArray();
 
         Iterable<ErrorEmployee>  collectionEnumerable = collectionError;
         assertThat(collectionEnumerable).isNotEmpty();
@@ -28,6 +29,9 @@ public class ErrorEmployeeTest {
         var collectionError = new ListOfErrorEmployee(); // new ArrayList<ErrorEmployee>();
         collectionError.add(err);
         assertEquals(collectionError.isEmpty(),   false);
+
+        // *** ces 2 lignes dessous ne peuvent compiler
+        //   collectionError.stream().toArray();
        // assertThat(collectionError).isNotEmpty();
     }
 
@@ -37,6 +41,9 @@ public class ErrorEmployeeTest {
         var collectionError = new ListOfErrorEmployee(); // new ArrayList<ErrorEmployee>();
 
         assertEquals(collectionError.isEmpty(),   true);
+
+
+
         // assertThat(collectionError).isNotEmpty();
     }
 
