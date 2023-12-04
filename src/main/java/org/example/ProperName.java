@@ -8,6 +8,11 @@ public record ProperName(String name) {
     }
 
     public boolean validate() {
-        return  (name!=null) && !name.isEmpty() &&  name.replaceAll("[a-zA-Z ]", "").isEmpty();
+        return  (name!=null) && !name.isEmpty() && hasOnlyValidChars();
+    }
+
+    private boolean hasOnlyValidChars() {
+       var r =  name.chars().mapToObj(c -> (char)c).filter(c -> !Character.isAlphabetic(c) );
+       return r.findAny().isEmpty();
     }
 }
