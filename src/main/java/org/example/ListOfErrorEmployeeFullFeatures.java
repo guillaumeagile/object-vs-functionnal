@@ -1,6 +1,8 @@
 package org.example;
 
+import java.lang.foreign.SymbolLookup;
 import java.util.ArrayList;
+import java.util.function.Function;
 
 public class ListOfErrorEmployeeFullFeatures  {
 
@@ -15,5 +17,11 @@ public class ListOfErrorEmployeeFullFeatures  {
 
     public boolean isEmpty() {
         return collectionError.isEmpty();
+    }
+
+    // Calisthenics à fond, mais discutable
+    public ListOfErrorEmployeeFullFeatures filter (Function<ErrorEmployee, Boolean> f){
+        throw new RuntimeException();
+        //return collectionError.stream().filter(f) ;
     }
 }
