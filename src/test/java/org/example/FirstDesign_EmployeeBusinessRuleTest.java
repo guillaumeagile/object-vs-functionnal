@@ -104,36 +104,8 @@ public class FirstDesign_EmployeeBusinessRuleTest {
 
 	// TODO: connaitre la liste des raisons pour lesquelles on est invalie
 
-	/*
-	@Test
-	void LastNameINvalidWrongCaracter_V2_2() throws Exception {
-		var sut = new Employee("Ant&hony", "C1ss", 18);
 
-		var validateur = new EmployeeValidatorSimple(sut);
-		var collectErrors = validateur.validate2();
 
-		assertThat(collectErrors.nextElement()).isInstanceOfAny(ErrorEmployee.getClass() );
-	}
-
-	@Test
-	void LastNameINvalidWrongCaracter_V2() {
-		var sut = new Employee("Anthony", "C1ss", 18);
-
-		var validateur = new EmployeeValidatorSimple(sut);
-
-		assertThat( validateur.validate2()).contains(new InvalidLastName());
-	}
-
-	@Test
-	void LastNameINvalidWrongCaracterTwice_V2() {
-		var sut = new Employee("Ant&hony", "C1ss", 18);
-
-		var validateur = new EmployeeValidatorSimple(sut);
-
-		assertThat( validateur.validate2()).contains( new InvalidLastName());
-		assertThat( validateur.validate2()).contains( new InvalidFirstName());
-	}
-*/
 
 
 }
