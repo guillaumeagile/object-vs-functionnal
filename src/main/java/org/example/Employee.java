@@ -28,7 +28,7 @@ public class Employee {
         if (o == null || getClass() != o.getClass()) return false;
         var employee = (Employee) o;
         return Objects.equals(pfirstName, employee.pfirstName) &&
-                Objects.equals(age, employee.age) &&
+                Objects.equals(plastName, employee.plastName)  &&
                 Objects.equals(age, employee.age);
     }
 

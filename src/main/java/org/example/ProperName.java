@@ -8,6 +8,6 @@ public record ProperName(String name) {
     }
 
     public boolean validate() {
-        return name.replaceAll("[a-zA-Z ]", "").isEmpty() && !name.isEmpty();
+        return  (name!=null) && !name.isEmpty() &&  name.replaceAll("[a-zA-Z ]", "").isEmpty();
     }
 }

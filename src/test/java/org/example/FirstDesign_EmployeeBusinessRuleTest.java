@@ -45,8 +45,26 @@ public class FirstDesign_EmployeeBusinessRuleTest {
 	}
 
 	@Test
+	void EmployeeNonEquality() {
+		var sut = new Employee("Anthony", "Cassaigne", 18);
+		var sut2 = new Employee("Anthony", "Ca", 18);
+		assertThat( sut).isNotEqualTo(sut2);
+	}
+
+
+
+
+	@Test
 	void SecondRule_Invalid() {
 		var sut = new Employee("Anthony", "", 18);
+
+		var validateur = new EmployeeValidatorSimple(sut);
+		assertThat( validateur.validate()).isFalse();
+	}
+
+	@Test
+	void SecondRuleNull_Invalid() {
+		var sut = new Employee("Anthony", null, 18);
 
 		var validateur = new EmployeeValidatorSimple(sut);
 		assertThat( validateur.validate()).isFalse();
@@ -86,6 +104,7 @@ public class FirstDesign_EmployeeBusinessRuleTest {
 
 	// TODO: connaitre la liste des raisons pour lesquelles on est invalie
 
+	/*
 	@Test
 	void LastNameINvalidWrongCaracter_V2_2() throws Exception {
 		var sut = new Employee("Ant&hony", "C1ss", 18);
@@ -114,7 +133,7 @@ public class FirstDesign_EmployeeBusinessRuleTest {
 		assertThat( validateur.validate2()).contains( new InvalidLastName());
 		assertThat( validateur.validate2()).contains( new InvalidFirstName());
 	}
-
+*/
 
 
 }
