@@ -1,6 +1,4 @@
 package org.example;
-
-import java.lang.foreign.SymbolLookup;
 import java.util.ArrayList;
 import java.util.function.Function;
 
