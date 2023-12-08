@@ -14,7 +14,13 @@ public class EmployeeValidatorSimple {
     }
 
 
-    public ListOfErrorEmployee validate2()  {
-     return new ListOfErrorEmployee();
+    public ListOfErrorEmployee validate2() {
+        var result = new ListOfErrorEmployee();
+        /* TODO: refactoring remove if */
+        if (!employee.lastNameIsValid())
+            result.add(new ErrorEmployee("Invalid Lastname", 1));
+        if (!employee.firstNameIsValid())
+            result.add(new ErrorEmployee("Invalid Firstname", 1));
+        return result;
     }
 }

@@ -23,4 +23,11 @@ public class ListOfErrorEmployee implements Iterable<ErrorEmployee> {
     public boolean isEmpty() {
         return collectionError.isEmpty();
     }
+
+    public boolean contains(ErrorEmployee e) {
+        return collectionError.contains(e);
+    }
+
+
+
 }
