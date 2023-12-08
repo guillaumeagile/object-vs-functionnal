@@ -1,16 +1,14 @@
 package org.example;
 
-import org.assertj.core.api.Assert;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class ErrorEmployeeTest {
+public class ListOfErrorsEmployeeTest {
 
     @Test
     void instanciate_errror_collection() {
