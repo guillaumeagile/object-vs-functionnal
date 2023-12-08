@@ -13,58 +13,34 @@ public class ListOfErrorsEmployeeTest {
     @Test
     void instanciate_errror_collection() {
         var err = new ErrorEmployee("fool", 0);
-       var collectionError =  new ArrayList<ErrorEmployee>();
+        var collectionError = new ArrayList<ErrorEmployee>();
         collectionError.add(err);
-      var exempleStreamable =   collectionError.stream().toArray();
 
-        Iterable<ErrorEmployee>  collectionEnumerable = collectionError;
+        Iterable<ErrorEmployee> collectionEnumerable = collectionError;
         assertThat(collectionEnumerable).isNotEmpty();
     }
 
     @Test
-    void instanciate_errors_collection_calisthenics()  {
+    void instanciate_errors_collection_calisthenics() {
         var err = new ErrorEmployee("fool", 0);
         var collectionError = new ListOfErrorEmployee(); // new ArrayList<ErrorEmployee>();
         collectionError.add(err);
-        assertEquals(collectionError.isEmpty(),   false);
+        assertEquals(collectionError.isEmpty(), false);
 
         // *** ces 2 lignes dessous ne peuvent compiler
         //   collectionError.stream().toArray();
-       // assertThat(collectionError).isNotEmpty();
-    }
-
-    @Test
-    void instanciate_errror_collection_calisthenics_vide()  {
-
-        var collectionError = new ListOfErrorEmployee(); // new ArrayList<ErrorEmployee>();
-
-        assertEquals(collectionError.isEmpty(),   true);
-
-
-
         // assertThat(collectionError).isNotEmpty();
     }
 
-
-    //	assertThat(collectErrors.nextElement()).isInstanceOfAny(ErrorEmployee);
-/*
     @Test
-    void LastNameINvalidWrongCaracter_V2() {
-        var sut = new Employee("Anthony", "C1ss", 18);
+    void instanciate_errror_collection_calisthenics_vide() {
 
-        var validateur = new EmployeeValidatorSimple(sut);
+        var collectionError = new ListOfErrorEmployee();
 
-        assertThat( validateur.validate2()).contains(new InvalidLastName());
+        assertEquals(collectionError.isEmpty(), true);
+
     }
 
-    @Test
-    void LastNameINvalidWrongCaracterTwice_V2() {
-        var sut = new Employee("Ant&hony", "C1ss", 18);
 
-        var validateur = new EmployeeValidatorSimple(sut);
 
-        assertThat( validateur.validate2()).contains( new InvalidLastName());
-        assertThat( validateur.validate2()).contains( new InvalidFirstName());
-    }
-*/
 }

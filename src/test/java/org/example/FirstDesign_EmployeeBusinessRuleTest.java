@@ -52,6 +52,14 @@ public class FirstDesign_EmployeeBusinessRuleTest {
 	}
 
 
+	@Test
+	void RuleValidEmployee() {
+		var sut = new Employee("Gaston", "Lagaffe", 18);
+
+		var validator = new EmployeeValidatorSimple(sut);
+		assertThat( validator.validate()).isTrue();
+	}
+
 
 
 	@Test

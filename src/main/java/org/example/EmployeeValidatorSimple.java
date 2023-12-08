@@ -14,7 +14,7 @@ public class EmployeeValidatorSimple {
     }
 
 
-    public Enumeration<Boolean> validate2()  {
-     return null;
+    public ListOfErrorEmployee validate2()  {
+     return new ListOfErrorEmployee();
     }
 }
