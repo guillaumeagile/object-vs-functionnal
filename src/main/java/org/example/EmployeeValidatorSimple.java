@@ -17,6 +17,8 @@ public class EmployeeValidatorSimple {
     public ListOfErrorEmployee validate2() {
         var result = new ListOfErrorEmployee();
         /* TODO: refactoring remove if */
+        /* Guillaume => fonctions */
+        /* Anthony => no boolean primitive obsession => polymorphisme */
         if (!employee.lastNameIsValid())
             result.add(new ErrorEmployee("Invalid Lastname", 1));
         if (!employee.firstNameIsValid())
