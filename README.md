@@ -8,6 +8,8 @@ et on a voulu le refaire par nous meme en comparant
  - une approche objet
    - loi de Demeter repsectée (tell, don't ask)
    - plus SOLID
+   - une inspiration venant des règles Calisthenics Objects de Jeff Bay https://eltonminetto.dev/en/post/2019-06-01-object-calisthenics-golang/
+   Il s'agit de 9 règles donnant un cadre contraignant permettant de simplifier les code en approche objets et ouvrant des opportunités à une plus grand émergeance de classes et à l'expression du polymorphisme. 
  - une approche fonctionnelle
 
 
@@ -19,3 +21,4 @@ et on a voulu le refaire par nous meme en comparant
 # etape x : TODO: connaitre la liste des raisons pour lesquelles on est invalie
 
 pour cela nous allons retourner une collection d'objets "ErrorEmployee" ........
+Calisthenics nous invite alors à créer une classe collection.
