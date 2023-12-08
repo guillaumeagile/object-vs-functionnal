@@ -24,7 +24,7 @@ public class ErrorEmployeeTest {
     }
 
     @Test
-    void instanciate_errror_collection_calisthenics()  {
+    void instanciate_errors_collection_calisthenics()  {
         var err = new ErrorEmployee("fool", 0);
         var collectionError = new ListOfErrorEmployee(); // new ArrayList<ErrorEmployee>();
         collectionError.add(err);
