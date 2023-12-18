@@ -12,6 +12,7 @@ public class Validate4_BuildersFluentVaildation {
         var result = Employee.WithFirstName("Gaston").WithLastName("").Build();
 
         // OBJECTIF : utiliser un truc comme     RuleFor(customer => customer.Surname).NotNull().NotEqual("foo");
+        // inspiré de https://docs.fluentvalidation.net/en/latest/start.html
 
         assertThat( result.isEmpty()).isFalse();
         assertThat(result).contains(new ErrorEmployee("Invalid Lastname", 1));
