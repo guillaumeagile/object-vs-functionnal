@@ -78,10 +78,11 @@ public class ListOfErrorsEmployeeTest {
     void listOfEmployees_addEmptyError() {
 
         var collectionError1 = new ListOfErrorEmployee();
-        collectionError1.add(new EmptyErrorEmployee());
+        var res = collectionError1.add(new EmptyErrorEmployee());
         var collectionError2 = new ListOfErrorEmployee();
         collectionError2.add(new ErrorEmployee("foo", 42));
 
+        assertThat(res).isFalse();
         assertNotEquals(collectionError1, collectionError2);
         assertThat(collectionError1).isEmpty();
     }
