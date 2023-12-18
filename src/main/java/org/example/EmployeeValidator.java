@@ -26,7 +26,6 @@ public class EmployeeValidator {
 
     public ListOfErrorEmployee validate3() {
         var result = new ListOfErrorEmployee();
-
         result.add(employee.lastNameIsValid2());
         result.add(employee.firstNameIsValid2());
         return result;
