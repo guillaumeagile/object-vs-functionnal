@@ -17,7 +17,8 @@ public class ListOfErrorEmployee implements Iterable<IErrorEmployee> {
     }
 
     public boolean add(IErrorEmployee err) {
-        if (!( err instanceof EmptyErrorEmployee ))
+        if (!( err instanceof EmptyErrorEmployee ))  // ATTENTION: usage de instanceOf
+            // pattern matching https://www.baeldung.com/java-pattern-matching-instanceof#pattern-matching
             return collectionError.add(err);
         return false;
     }

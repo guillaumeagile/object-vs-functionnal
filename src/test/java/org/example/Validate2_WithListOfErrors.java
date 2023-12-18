@@ -1,5 +1,6 @@
 package org.example;
 
+import org.assertj.core.api.Assert;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -74,6 +75,12 @@ public class Validate2_WithListOfErrors {
         assertThat( result.isEmpty()).isFalse();
         assertThat(result).contains(new ErrorEmployee("Invalid Lastname", 1));
 
+    }
+
+    @Test
+    void voooo(){
+        IErrorEmployee a = new EmptyErrorEmployee();
+        assertThat(a).isEqualTo(new EmptyErrorEmployee());
     }
 
 }
