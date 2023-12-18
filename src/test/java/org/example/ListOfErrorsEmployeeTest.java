@@ -38,11 +38,39 @@ public class ListOfErrorsEmployeeTest {
         var collectionError = new ListOfErrorEmployee();
 
         assertEquals(collectionError.isEmpty(), true);
-
     }
 
+    @Test
+    void confirmationTest_equalityValuesInLists() {
 
+        var collectionError1 = new ArrayList<Integer>();
+        collectionError1.add(42);
+        var collectionError2 = new ArrayList<Integer>();
+        collectionError2.add(42);
 
+        assertEquals(collectionError1, collectionError2);
+    }
 
+    @Test
+    void confirmationTest_equalityValueObjectsInLists() {
+
+        var collectionError1 = new ArrayList<ErrorEmployee>();
+        collectionError1.add(new ErrorEmployee("foo", 42));
+        var collectionError2 = new ArrayList<ErrorEmployee>();
+        collectionError2.add(new ErrorEmployee("foo", 42));
+
+        assertEquals(collectionError1, collectionError2);
+    }
+
+    @Test
+    void listOfEmployees_equality() {
+
+        var collectionError1 = new ListOfErrorEmployee();
+        collectionError1.add(new ErrorEmployee("foo", 42));
+        var collectionError2 = new ListOfErrorEmployee();
+        collectionError2.add(new ErrorEmployee("foo", 42));
+
+        assertEquals(collectionError1, collectionError2);
+    }
 
 }

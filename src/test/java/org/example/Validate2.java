@@ -26,7 +26,6 @@ public class Validate2 {
     }
 
     @Test
-
     void FirstNameEmployee_Invalid() {
         var sut = new Employee("", "Lagaffe", 18);
 
