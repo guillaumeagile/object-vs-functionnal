@@ -11,13 +11,8 @@ public class Employee {
 
     public Employee(String firstName,
                           String lastName, int age) {
-        System.out.format("firstName: %s, lastName: %s, age: %d",
-                firstName, lastName, age);
-
         this.pfirstName = new ProperName(firstName);
-
         this.plastName = new ProperName(lastName);
-
         this.age = age;    // TODO: mauvais design sur l'age: année de naissance ?
     }
 
@@ -30,12 +25,6 @@ public class Employee {
         return Objects.equals(pfirstName, employee.pfirstName) &&
                 Objects.equals(plastName, employee.plastName)  &&
                 Objects.equals(age, employee.age);
-    }
-
-
-
-    public int getAge() {
-        return age;
     }
 
     @Override
@@ -58,5 +47,17 @@ public class Employee {
 
     public boolean lastNameIsValid() {
         return plastName.validate();
+    }
+
+    public IErrorEmployee lastNameIsValid2() {
+        if (plastName.validate())
+            return new EmptyErrorEmployee();
+        return new ErrorEmployee("Invalid Lastname", 1);
+    }
+
+    public IErrorEmployee firstNameIsValid2() {
+        if (pfirstName.validate())
+            return new EmptyErrorEmployee();
+        return new ErrorEmployee("Invalid Firstname", 1);
     }
 }

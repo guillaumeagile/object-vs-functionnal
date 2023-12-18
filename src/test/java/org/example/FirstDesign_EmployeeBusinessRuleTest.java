@@ -12,7 +12,7 @@ public class FirstDesign_EmployeeBusinessRuleTest {
 		var sut = new Employee("", "Cassaigne", 18);
 		assertThat(sut).isNotNull();
 
-		var validateur = new EmployeeValidatorSimple(sut);
+		var validateur = new EmployeeValidator(sut);
 		assertThat( validateur.validate()).isFalse();
 	}
 
@@ -20,7 +20,7 @@ public class FirstDesign_EmployeeBusinessRuleTest {
 	void CanWeConstructAnObjectThatIsValid() {
 		var sut = new Employee("Anthony", "Cassaigne", 18);
 
-		var validateur = new EmployeeValidatorSimple(sut);
+		var validateur = new EmployeeValidator(sut);
 		assertThat( validateur.validate()).isTrue();
 	}
 
@@ -56,7 +56,7 @@ public class FirstDesign_EmployeeBusinessRuleTest {
 	void RuleValidEmployee() {
 		var sut = new Employee("Gaston", "Lagaffe", 18);
 
-		var validator = new EmployeeValidatorSimple(sut);
+		var validator = new EmployeeValidator(sut);
 		assertThat( validator.validate()).isTrue();
 	}
 
@@ -66,7 +66,7 @@ public class FirstDesign_EmployeeBusinessRuleTest {
 	void SecondRule_Invalid() {
 		var sut = new Employee("Anthony", "", 18);
 
-		var validateur = new EmployeeValidatorSimple(sut);
+		var validateur = new EmployeeValidator(sut);
 		assertThat( validateur.validate()).isFalse();
 	}
 
@@ -74,7 +74,7 @@ public class FirstDesign_EmployeeBusinessRuleTest {
 	void SecondRuleNull_Invalid() {
 		var sut = new Employee("Anthony", null, 18);
 
-		var validateur = new EmployeeValidatorSimple(sut);
+		var validateur = new EmployeeValidator(sut);
 		assertThat( validateur.validate()).isFalse();
 	}
 
@@ -82,7 +82,7 @@ public class FirstDesign_EmployeeBusinessRuleTest {
 	void FirstNameINvalidWrongCaracter() {
 		var sut = new Employee("A#thony", "Cass", 18);
 
-		var validateur = new EmployeeValidatorSimple(sut);
+		var validateur = new EmployeeValidator(sut);
 		assertThat( validateur.validate()).isFalse();
 	}
 
@@ -90,7 +90,7 @@ public class FirstDesign_EmployeeBusinessRuleTest {
 	void LastNameINvalidWrongCaracter() {
 		var sut = new Employee("Anthony", "C1ss", 18);
 
-		var validateur = new EmployeeValidatorSimple(sut);
+		var validateur = new EmployeeValidator(sut);
 		assertThat( validateur.validate()).isFalse();
 	}
 	// TODO: connaitre la liste des raisons pour lesquelles on est invalie

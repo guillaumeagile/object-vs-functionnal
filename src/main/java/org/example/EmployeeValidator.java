@@ -1,11 +1,9 @@
 package org.example;
 
-import java.util.Enumeration;
-
-public class EmployeeValidatorSimple {
+public class EmployeeValidator {
     private final Employee employee;
 
-    public EmployeeValidatorSimple(Employee employee) {
+    public EmployeeValidator(Employee employee) {
         this.employee = employee;
     }
 
@@ -23,6 +21,14 @@ public class EmployeeValidatorSimple {
             result.add(new ErrorEmployee("Invalid Lastname", 1));
         if (!employee.firstNameIsValid())
             result.add(new ErrorEmployee("Invalid Firstname", 1));
+        return result;
+    }
+
+    public ListOfErrorEmployee validate3() {
+        var result = new ListOfErrorEmployee();
+
+        result.add(employee.lastNameIsValid2());
+        result.add(employee.firstNameIsValid2());
         return result;
     }
 }

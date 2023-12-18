@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 
 public class ListOfErrorsEmployeeTest {
@@ -71,6 +72,18 @@ public class ListOfErrorsEmployeeTest {
         collectionError2.add(new ErrorEmployee("foo", 42));
 
         assertEquals(collectionError1, collectionError2);
+    }
+
+    @Test
+    void listOfEmployees_addEmptyError() {
+
+        var collectionError1 = new ListOfErrorEmployee();
+        collectionError1.add(new EmptyErrorEmployee());
+        var collectionError2 = new ListOfErrorEmployee();
+        collectionError2.add(new ErrorEmployee("foo", 42));
+
+        assertNotEquals(collectionError1, collectionError2);
+        assertThat(collectionError1).isEmpty();
     }
 
 }

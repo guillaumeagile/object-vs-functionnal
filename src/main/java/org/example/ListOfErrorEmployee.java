@@ -4,19 +4,26 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
-public class ListOfErrorEmployee implements Iterable<ErrorEmployee> {
+public class ListOfErrorEmployee implements Iterable<IErrorEmployee> {
 
-    private final ArrayList<ErrorEmployee> collectionError;
+    private final ArrayList<IErrorEmployee> collectionError;
 
     public ListOfErrorEmployee(){
-        collectionError = new ArrayList<ErrorEmployee>();
+        collectionError = new ArrayList<IErrorEmployee>();
     }
-    public boolean add(ErrorEmployee err) {
-        return collectionError.add(err);
+
+    public static ListOfErrorEmployee EmptyList() {
+        return new ListOfErrorEmployee();
+    }
+
+    public boolean add(IErrorEmployee err) {
+        if (!( err instanceof EmptyErrorEmployee ))
+            return collectionError.add(err);
+        return false;
     }
 
     @Override
-    public Iterator<ErrorEmployee> iterator() {
+    public Iterator<IErrorEmployee> iterator() {
         return collectionError.iterator();
     }
 
@@ -30,7 +37,6 @@ public class ListOfErrorEmployee implements Iterable<ErrorEmployee> {
         if (o == null || getClass() != o.getClass()) return false;
 
         ListOfErrorEmployee that = (ListOfErrorEmployee) o;
-
         return collectionError.equals(that.collectionError);
     }
 
@@ -42,7 +48,5 @@ public class ListOfErrorEmployee implements Iterable<ErrorEmployee> {
     public boolean contains(ErrorEmployee e) {
         return collectionError.contains(e);
     }
-
-
 
 }
