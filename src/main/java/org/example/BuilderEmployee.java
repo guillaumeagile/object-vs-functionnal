@@ -1,5 +1,7 @@
 package org.example;
 
+import io.vavr.control.Either;
+
 import java.util.Optional;
 
 public record BuilderEmployee(ProperName firstName , ProperName lastName) {
@@ -16,4 +18,9 @@ public record BuilderEmployee(ProperName firstName , ProperName lastName) {
             return Optional.of( new Employee(this.firstName.name(), this.lastName.name(), 18));
         return Optional.empty();
     }
-}
+
+    public Either<ErrorEmployee, Employee> BuildEither() {
+       return Either.left(new ErrorEmployee("", 0));
+       }
+    }
+
