@@ -1,7 +1,6 @@
 package org.example;
 
 import java.util.Objects;
-import java.util.Optional;
 
 public class Employee {
     private  ProperName plastName;
@@ -23,20 +22,20 @@ public class Employee {
         if (o == null || getClass() != o.getClass()) return false;
         var employee = (Employee) o;
         return Objects.equals(pfirstName, employee.pfirstName) &&
-                Objects.equals(plastName, employee.plastName)  &&
+                Objects.equals(getPlastName(), employee.getPlastName())  &&
                 Objects.equals(age, employee.age);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pfirstName, plastName);
+        return Objects.hash(pfirstName, getPlastName());
     }
 
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Welcome {");
         sb.append("firstName='").append(pfirstName).append('\'');
-        sb.append(", lastName='").append(plastName).append('\'');
+        sb.append(", lastName='").append(getPlastName()).append('\'');
         sb.append('}');
         return sb.toString();
     }
@@ -46,11 +45,11 @@ public class Employee {
     }
 
     public boolean lastNameIsValid() {
-        return plastName.validate();
+        return getPlastName().validate();
     }
 
     public IErrorEmployee lastNameIsValid2() {
-        if (plastName.validate())
+        if (getPlastName().validate())
             return new EmptyErrorEmployee();
         return new ErrorEmployee("Invalid Lastname", 1);
     }
@@ -59,5 +58,9 @@ public class Employee {
         if (pfirstName.validate())
             return new EmptyErrorEmployee();
         return new ErrorEmployee("Invalid Firstname", 1);
+    }
+
+    public ProperName getPlastName() {
+        return plastName;
     }
 }
