@@ -45,6 +45,10 @@ public class Validate4_BuildersFluentVaildation {
     // TODO: avoir un flux de création d'employés avec des données invalides ou valides, ca fonctionne toujours bien
     // écrit sur une seulle ligne, fluent
 
-    // TODO: ré écrire le validateur avec un truc comme     RuleFor(customer => customer.Surname).NotNull().NotEqual("foo");
-    //      inspiré de https://docs.fluentvalidation.net/en/latest/start.html
+    // TODO: ré écrire le validateur avec des Lambdas ou des FluentInterface
+    // https://medium.com/walmartglobaltech/fluent-validation-with-chaining-methods-in-java-improving-code-readability-and-flexibility-beb8b040a2ee
+
+    // TODO !!!!!!!!!! avant cela , il vaut mieux commencer par utiliser la monad Validation de VAVR !!!!!!!!!
+
+
 }
