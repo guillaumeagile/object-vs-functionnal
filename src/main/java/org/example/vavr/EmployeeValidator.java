@@ -7,6 +7,8 @@ import org.example.ProperName;
 
 import java.text.MessageFormat;
 
+import static java.lang.StringTemplate.STR;
+
 public class EmployeeValidator {
 
     private static final int MIN_AGE = 18;
@@ -19,12 +21,12 @@ public class EmployeeValidator {
         var properName = new ProperName(name);
         return properName.validate()
                 ? Validation.valid(name)
-                : Validation.invalid(MessageFormat.format("Name contains invalid characters: {0}", name));
+                : Validation.invalid(STR."Name contains invalid characters: \{name}");
     }
 
     private Validation<String, Integer> validateAge(int age) {
         return age < MIN_AGE
-                ? Validation.invalid("Age must be at least " + MIN_AGE)
+                ? Validation.invalid(  STR."Age must be at least \{MIN_AGE}"  )
                 : Validation.valid(age);
     }
 }
