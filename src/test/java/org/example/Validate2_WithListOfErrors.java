@@ -1,6 +1,6 @@
 package org.example;
 
-import org.assertj.core.api.Assert;
+import org.example.calisthenicOOP.*;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

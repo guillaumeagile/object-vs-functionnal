@@ -1,5 +1,8 @@
 package org.example;
 
+import org.example.calisthenicOOP.EmptyErrorEmployee;
+import org.example.calisthenicOOP.ErrorEmployee;
+import org.example.calisthenicOOP.ListOfErrorEmployee;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

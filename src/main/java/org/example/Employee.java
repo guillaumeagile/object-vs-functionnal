@@ -1,7 +1,10 @@
 package org.example;
 
+import org.example.calisthenicOOP.EmptyErrorEmployee;
+import org.example.calisthenicOOP.ErrorEmployee;
+import org.example.calisthenicOOP.IErrorEmployee;
+
 import java.util.Objects;
-import java.util.Optional;
 
 public class Employee {
     private  ProperName plastName;

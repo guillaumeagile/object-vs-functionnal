@@ -1,7 +1,6 @@
-package org.example;
+package org.example.calisthenicOOP;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Iterator;
 
 public class ListOfErrorEmployee implements Iterable<IErrorEmployee> {

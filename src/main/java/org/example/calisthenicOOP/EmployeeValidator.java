@@ -1,4 +1,6 @@
-package org.example;
+package org.example.calisthenicOOP;
+
+import org.example.Employee;
 
 public class EmployeeValidator {
     private final Employee employee;

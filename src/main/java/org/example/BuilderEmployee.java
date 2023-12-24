@@ -1,6 +1,7 @@
 package org.example;
 
 import io.vavr.control.Either;
+import org.example.calisthenicOOP.ErrorEmployee;
 
 import java.util.Optional;
 
@@ -20,7 +21,7 @@ public record BuilderEmployee(ProperName firstName , ProperName lastName) {
     }
 
     public Either<ErrorEmployee, Employee> BuildEither() {
-       return Either.left(new ErrorEmployee("", 0));
+       return Either.left(new ErrorEmployee("Invalid Firstname", 1));
        }
     }
 

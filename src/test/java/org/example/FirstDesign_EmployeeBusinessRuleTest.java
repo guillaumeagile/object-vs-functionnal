@@ -2,6 +2,7 @@ package org.example;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.example.calisthenicOOP.EmployeeValidator;
 import org.junit.jupiter.api.Test;
 
 public class FirstDesign_EmployeeBusinessRuleTest {
