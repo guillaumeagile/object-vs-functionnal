@@ -8,6 +8,44 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class VavrEmployeeValidatorTest {
 
     @Test
+    void ValidatorForTheName() {
+        // on fait le choix de VAVR
+        var employeeValidator = new org.example.vavr.EmployeeValidator();
+
+       var result = employeeValidator.validateAge(19);
+
+        assertThat( result.isValid()).isTrue();
+        assertThat( result.get() ).isEqualTo(19);
+    }
+
+    @Test
+    void ValidatorForThAgeInvaalid() {
+        // on fait le choix de VAVR
+        var employeeValidator = new org.example.vavr.EmployeeValidator();
+
+        var result = employeeValidator.validateAge(0);
+
+        assertThat( result.isValid()).isFalse();
+        assertThat( result.getOrElse(-1) ).isEqualTo(-1);
+
+        assertThat( result.getError()).isEqualTo("boooh 18");
+        result.mapError( err ->  assertThat( err).isEqualTo("boooh 18"));
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @Test
     void CanWeConstructAnObjectThatIsInvalid() {
         var personValidator = new org.example.vavr.EmployeeValidator();
 

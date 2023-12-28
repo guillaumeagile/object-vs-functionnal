@@ -14,19 +14,18 @@ public class EmployeeValidator {
     private static final int MIN_AGE = 18;
 
     public Validation<Seq<String>, Employee> validatePerson(String firstname, String lastName, int age) {
-        return Validation.combine(validateName(firstname), validateName(lastName), validateAge(age)).ap(Employee::new);
+         return Validation.combine(validateName(firstname), validateName(lastName), validateAge(age)).ap(Employee::new);
     }
 
-    private Validation<String, String> validateName(String name) {
-        var properName = new ProperName(name);
-        return properName.validate()
-                ? Validation.valid(name)
-                : Validation.invalid(STR."Name contains invalid characters: \{name}");
+    public Validation<String, String> validateName(String name) {
+
+        return
+                Validation.invalid(STR."Nboo: \{name}");
     }
 
-    private Validation<String, Integer> validateAge(int age) {
-        return age < MIN_AGE
-                ? Validation.invalid(  STR."Age must be at least \{MIN_AGE}"  )
-                : Validation.valid(age);
+    public  Validation<String, Integer> validateAge(int age) {
+        if (age >= 18)
+            return  Validation.valid(age);
+        return Validation.invalid(  STR."boooh \{MIN_AGE}"  );
     }
 }
