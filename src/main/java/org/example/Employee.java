@@ -1,8 +1,5 @@
 package org.example;
 
-import org.example.calisthenicOOP.EmptyErrorEmployee;
-import org.example.calisthenicOOP.ErrorEmployee;
-import org.example.calisthenicOOP.IErrorEmployee;
 
 import java.util.Objects;
 
@@ -52,15 +49,5 @@ public class Employee {
         return plastName.validate();
     }
 
-    public IErrorEmployee lastNameIsValid2() {
-        if (plastName.validate())
-            return new EmptyErrorEmployee();
-        return new ErrorEmployee("Invalid Lastname", 1);
-    }
 
-    public IErrorEmployee firstNameIsValid2() {
-        if (pfirstName.validate())
-            return new EmptyErrorEmployee();
-        return new ErrorEmployee("Invalid Firstname", 1);
-    }
 }
