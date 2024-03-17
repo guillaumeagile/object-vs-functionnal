@@ -29,6 +29,6 @@ public class EmployeeValidator {
     public  Validation<String, Integer> validateAge(int age) {
         if (age >= 18)
             return  Validation.valid(age);
-        return Validation.invalid(  STR."boooh \{MIN_AGE}"  );
+        return Validation.invalid(  STR."Age must be at least \{MIN_AGE}"  );
     }
 }
