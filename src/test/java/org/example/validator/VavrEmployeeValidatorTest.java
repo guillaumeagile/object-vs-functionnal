@@ -15,7 +15,9 @@ public class VavrEmployeeValidatorTest {
        var result = employeeValidator.validateAge(19);
 
         assertThat( result.isValid()).isTrue();
-        assertThat( result.get() ).isEqualTo(19);
+      //  assertThat( result.get() ).isEqualTo(19);  !!! SURTOUT PAS
+
+        result.map( valeur ->  assertThat( valeur).isEqualTo(19));
     }
 
     @Test
@@ -27,8 +29,6 @@ public class VavrEmployeeValidatorTest {
 
         assertThat( result.isValid()).isFalse();
         // assertThat( result.getOrElse(-1) ).isEqualTo(-1);
-
-        result.mapError( err ->  assertThat( err).isEqualTo("Age must be at least 18"));
 
 
         assertThat( result.getError()).isEqualTo("Age must be at least 18");
