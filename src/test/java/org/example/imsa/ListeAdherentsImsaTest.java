@@ -1,6 +1,7 @@
 package org.example.imsa;
 
 import io.vavr.control.Either;
+import io.vavr.control.Option;
 import org.example.imsa.Adherent;
 import org.example.imsa.EntierStrictementPositif;
 import org.example.imsa.FakeAdherentService;
@@ -31,9 +32,10 @@ public class ListeAdherentsImsaTest {
     void trouverAdherentsZeroAdherents() {
 
         var service = new FakeAdherentService(new ArrayList<>() );
-       var result = service.trouverAdherents(Optional.empty());
+       var result = service.trouverAdherents3(Option.none());
 
-        assertThat( result).isEmpty();
+        assertThat( result).isNotEmpty();  // the monad is not empty (is some)
+        assertThat( result.get()).isEmpty(); // but its content is empty
     }
 
     @Test
@@ -43,21 +45,24 @@ public class ListeAdherentsImsaTest {
         liste.add(new Adherent("0001", "gaston", 18));
         var service =
                 new FakeAdherentService(liste);
-        var result = service.trouverAdherents(Optional.empty());
+        var result = service.trouverAdherents3(Option.none());
 
-        assertThat( result).isEmpty();
+        assertThat( result).isNotEmpty();  // the monad is not empty (is some)
+        assertThat( result.get()).isNotEmpty(); //  its content is not empty either
     }
 
     @Test
-    void aaaa() {
+    void renameMe() {
 
         var liste = new ArrayList<Adherent>();
         liste.add(new Adherent("0001", "gaston", 18));
         var service =
                 new FakeAdherentService(liste);
-        var result = service.trouverAdherents(EntierStrictementPositif.Build(0));
+        var result = service.trouverAdherents3(
+                EntierStrictementPositif.Build2(0));
 
-        assertThat( result).isEmpty();
+        assertThat( result).isNotEmpty();
+        assertThat( result.get()).isNotEmpty(); // and its content is not empty
 
     }
 

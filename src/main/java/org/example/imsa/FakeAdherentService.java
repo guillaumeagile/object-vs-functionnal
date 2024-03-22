@@ -1,6 +1,8 @@
 package org.example.imsa;
 
 import io.vavr.control.Either;
+import io.vavr.control.Option;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -14,16 +16,22 @@ public class FakeAdherentService {
     public  FakeAdherentService( ArrayList<Adherent> list ) {
         this.list = list;
     }
-    public List<Adherent> trouverAdherents(Optional< EntierStrictementPositif> nbMax) {
 
-       var res =  nbMax
-               .map(valeurMax -> list.stream()
-                       .limit(valeurMax.valeur())
-                       .collect(Collectors.toList()));
 
-        return res.orElse(new ArrayList<Adherent>());
+    public  Option<List<Adherent>> trouverAdherents3(Option< EntierStrictementPositif> nbMax) {
+
+        List<Adherent> emptyList = new ArrayList<Adherent>();
+        var res =  nbMax
+                .map(valeurMax -> list.stream()
+                        .limit(valeurMax.valeur())
+                        .collect(Collectors.toList()));
+
+        return res.orElse( Option.of(list) );
 
     }
+
+
+
     public List<Adherent> trouverAdherents2( Either< String, Optional< EntierStrictementPositif>> entree) {
 
 
